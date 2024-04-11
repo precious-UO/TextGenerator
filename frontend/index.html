@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Generator</title>
+    <style>
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes rotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        .load {
+            width: 100px;
+            height: 100px;
+            margin: 110px auto 0;
+            border: solid 10px #8822aa;
+            border-radius: 50%;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            -webkit-transition: all 0.5s ease-in;
+            -webkit-animation-name: rotate;
+            -webkit-animation-duration: 1.0s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            transition: all 0.5 ease-in;
+            animation-name: rotate;
+            animation-duration: 1.0s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100 font-sans antialised">
+    <!--NAV BAR-->
+    <nav class="bg-blue-600 p-4 text-white flex justify-between">
+        <div>
+            <h1 class="text-3xl font-bold">Text Generator</h1>
+        </div>
+    </nav>
+    <br>
+    <br>
+    
+
+    <!--MAIN-->
+    <div class="flex-grow container mx-auto mt-10 px-4 sm:px-0">
+        <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 flex flex-col">
+            <!--INTRO SECTION-->
+            <div class="text-center">
+                <h2 class="text-2xl font-semibold mb-4">Welcome To Text Generator</h2>
+                <p class="text-gray-700">Generate text from YouTube Videos by simply pasting the link in to the search bar.</p>
+            </div>
+
+            <br>
+
+            <!--YOUTUBE SECTION-->
+            <div>
+                <h2 class="text-xl mb-4 font-semibold">Enter Link</h2>
+                <div class="flex space-x-4">
+                    <input type="text" id="youtube-link" type="url" placeholder="Enter YouTube link..." class="flex-grow p-2 border border-blue-400 rounded-l-md"/>
+                    <button id="Generate-button" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition-colors">Generate</button>
+                </div>
+            </div>
+
+            <br>
+
+             <!--LOADING ICON-->
+            <div style="display: none;" id="loading-circle" class="load">
+
+            </div>
+
+            <!--GENERATED TEXT DISPLAY-->
+            <br>
+
+            <section class="mt-10 flex-grow">
+
+                <h2 class="text-xl mb-4 font-semibold">Generated Text</h2>
+                <div id="blog-content" class="mt-2 text-gray-700 space-y-4">
+
+                   
+                </div>
+            </section>
+        </div>
+    </div>
+    <br>
+    <div>
+        <p class="p-5">Don't have an account? <a href="signup.html" class=" hover:underline">Create account</a> or <a href="login.html" class="hover:underline">Login</a></p>
+        
+    </div>
+    
+    <footer class="text-center p-4 text-blue mt-6">
+        <p>&copy <a href="#">DevStar 2024</a></p>
+    </footer>
+
+    <script src=""></script>
+</body>
+</html>
